@@ -1,111 +1,131 @@
 # 💻 Aplicação Desktop com Java + JavaFX + HTML/CSS/JS
 
-Este projeto demonstra como criar uma aplicação desktop utilizando Java com JavaFX, integrando uma interface desenvolvida com HTML, CSS e JavaScript.
-
-A ideia principal é utilizar o componente `WebView` do JavaFX para renderizar páginas web dentro de uma aplicação Java, permitindo unir o poder do Java com a flexibilidade do front-end web.
+Este projeto demonstra como criar uma aplicação desktop utilizando Java e JavaFX, integrando uma interface moderna desenvolvida com HTML, CSS e JavaScript através do componente WebView.
 
 ---
 
-# 🚀 Tecnologias utilizadas
+# 🚀 Tecnologias Utilizadas
 
-* ☕ Java JDK 17+
-* 🎨 JavaFX SDK
-* 💻 Eclipse IDE
-* 🌐 HTML, CSS e JavaScript
+| Tecnologia  | Versão                |
+| ----------- | --------------------- |
+| Java        | JDK 17                |
+| JavaFX      | 21                    |
+| Eclipse IDE | 2024-06 (ou superior) |
+| HTML/CSS/JS | Padrão Web            |
 
 ---
 
-# 📥 Instalações necessárias
+# 📥 Downloads Necessários
 
-## 1. Java (JDK)
+## ☕ Java (JDK 17)
 
-Para executar o projeto, é necessário ter o Java instalado.
-
-👉 Download:
+🔗 Download:
 https://adoptium.net/
 
-Passos:
+📌 Passos:
 
-1. Baixar o **Temurin JDK 17**
-2. Instalar normalmente (Next → Next → Finish)
-3. Marcar:
+1. Acesse o site
+2. Clique em **Latest LTS → JDK 17**
+3. Baixe o instalador `.msi`
+4. Instale normalmente
 
-   * Add to PATH
-   * Set JAVA_HOME
-
-Verificação:
-
-```bash
-java -version
-```
+🖼️ Exemplo visual:
+https://adoptium.net/images/installation.png
 
 ---
 
-## 2. JavaFX SDK
+## 🎨 JavaFX SDK (21)
 
-O JavaFX não vem incluso no Java moderno, então precisamos baixar separadamente.
-
-👉 Download:
+🔗 Download:
 https://gluonhq.com/products/javafx/
 
-Passos:
+📌 Passos:
 
-1. Baixar o JavaFX SDK (versão compatível com seu Java)
-2. Extrair o arquivo .zip
-3. Salvar em um diretório fixo, exemplo:
+1. Acesse o site
+2. Clique em **Download JavaFX**
+3. Escolha:
 
-```
+   * Windows
+   * JavaFX 21
+4. Extraia o arquivo
+
+📁 Coloque em:
+
+```id="4r1y47"
 C:\javafx
 ```
 
+🖼️ Exemplo visual:
+https://gluonhq.com/wp-content/uploads/2020/02/javafx-download.png
+
 ---
 
-## 3. Eclipse IDE
+## 💻 Eclipse IDE
 
-👉 Download:
+🔗 Download:
 https://www.eclipse.org/downloads/
 
-Utilizado para desenvolvimento e execução do projeto.
+📌 Passos:
+
+1. Baixe o **Eclipse Installer**
+2. Abra o instalador
+3. Clique em:
+
+👉 **Eclipse IDE for Java Developers**
+
+4. Clique em Install
+
+🖼️ Exemplo visual:
+https://www.eclipse.org/downloads/images/installer.png
 
 ---
 
-# ⚙️ Configuração do projeto
+# ⚙️ Configuração no Eclipse
 
-## 1. Criar projeto Java
+## 📌 Criar Projeto
 
-No Eclipse:
+1. File → New → Java Project
 
-* File → New → Java Project
+🖼️
+https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/images/ngj_newprj_wiz.png
 
 ---
 
-## 2. Adicionar JavaFX ao projeto
+## 📌 Adicionar JavaFX
 
-1. Botão direito no projeto → Build Path → Configure Build Path
-2. Aba Libraries → Add External JARs
-3. Selecionar todos os arquivos dentro de:
+1. Botão direito no projeto
+2. Build Path → Configure Build Path
+3. Aba Libraries
+4. Clique em **Add External JARs**
+5. Selecione TODOS os arquivos de:
 
-```
+```id="1lmn4l"
 C:\javafx\lib
 ```
 
+🖼️
+https://i.stack.imgur.com/1V7Zl.png
+
 ---
 
-## 3. Configurar VM Options (IMPORTANTE)
+## 📌 Configurar VM Options (ESSENCIAL)
 
-Run → Run Configurations → Arguments
+1. Run → Run Configurations
+2. Aba Arguments
+3. Em **VM arguments**, adicione:
 
-Adicionar:
-
-```
+```id="6hlsaf"
 --module-path C:\javafx\lib --add-modules javafx.controls,javafx.web
 ```
 
+🖼️
+https://i.stack.imgur.com/6RZ4n.png
+
 ---
 
-# 📁 Estrutura do projeto
+# 📁 Estrutura do Projeto
 
-```
+```id="f43wjr"
 src/
  └── meuapp/
       ├── Main.java
@@ -114,130 +134,80 @@ src/
       └── script.js
 ```
 
+📌 IMPORTANTE:
+
+* O `index.html` deve estar no mesmo pacote do `Main.java`
+
 ---
 
-# ☕ Código principal (Java)
+# ☕ Código Principal
 
-```java
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.web.WebView;
-import javafx.stage.Stage;
+```java id="n1rtqz"
+WebView webView = new WebView();
 
-public class Main extends Application {
-
-    @Override
-    public void start(Stage stage) {
-
-        WebView webView = new WebView();
-
-        webView.getEngine().load(
-            getClass().getResource("index.html").toExternalForm()
-        );
-
-        Scene scene = new Scene(webView, 800, 600);
-
-        stage.setTitle("Meu App Desktop");
-        stage.setMaximized(true);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public static void main(String[] args) {
-        launch();
-    }
-}
+webView.getEngine().load(
+    getClass().getResource("index.html").toExternalForm()
+);
 ```
 
 ---
 
-# 🌐 Interface (HTML)
+# ❗ Problemas Comuns
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+## 🔴 Erro: getResource(...) retorna null
 
-<h1>Meu App Desktop 🚀</h1>
-<button onclick="clicar()">Clique aqui</button>
+👉 Causa:
+Arquivo HTML fora do lugar
 
-<script src="script.js"></script>
-</body>
-</html>
-```
+👉 Solução:
+Colocar dentro do mesmo pacote do Main
 
 ---
 
-# 🎨 Estilo (CSS)
+## 🔴 Erro: JavaFX runtime components are missing
 
-```css
-body {
-    font-family: Arial;
-    text-align: center;
-    margin-top: 50px;
-}
-```
+👉 Solução:
+Verificar VM Options
 
 ---
 
-# ⚡ Script (JavaScript)
+## 🔴 Eclipse não atualiza arquivos
 
-```javascript
-function clicar() {
-    alert("Funcionando dentro do Java 😎");
-}
-```
+👉 Solução:
 
----
-
-# ❗ Problemas comuns e soluções
-
-### 🔴 Erro: getResource(...) retorna null
-
-Causa:
-
-* Arquivo HTML fora da pasta correta
-
-Solução:
-
-* Garantir que o `index.html` esteja dentro do mesmo pacote do `Main.java`
-
----
-
-### 🔴 Erro: JavaFX runtime components are missing
-
-Solução:
-
-* Verificar VM Options
-
----
-
-### 🔴 Arquivos não atualizam no Eclipse
-
-Solução:
-
-* Clicar com botão direito → Refresh (F5)
+* F5 (Refresh)
 * Project → Clean
 
 ---
 
-# 💡 Observações importantes
+# 📸 Prints do Projeto
 
-* Este projeto é desktop, não utiliza Servlet ou Tomcat
-* O JavaFX atua como "ponte" entre Java e HTML
-* É possível integrar com banco de dados futuramente (MySQL, por exemplo)
+💡 Recomenda-se adicionar:
+
+* Tela do Eclipse com projeto aberto
+* Estrutura de pastas
+* Aplicação rodando
+
+Você pode tirar prints com:
+
+* Windows: `Win + Shift + S`
+
+---
+
+# 💡 Observações
+
+* Projeto desktop (não usa Tomcat/Servlet)
+* JavaFX funciona como ponte entre Java e HTML
+* Pode ser expandido com banco de dados (MySQL)
 
 ---
 
 # 📌 Conclusão
 
-Este projeto demonstra uma forma simples e eficiente de criar aplicações desktop modernas utilizando tecnologias web dentro do Java.
+Este projeto demonstra como integrar tecnologias web dentro de aplicações desktop Java de forma simples e eficiente.
 
 ---
 
 # 👨‍💻 Autor
 
-Pedro Henrique Dantas Silva
+Projeto desenvolvido para fins educacionais.
