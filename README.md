@@ -20,7 +20,7 @@ Este projeto demonstra como criar uma aplicação desktop utilizando Java e Java
 ## ☕ Java (JDK 17)
 
 🔗 Download:
-https://adoptium.net/
+[https://adoptium.net/](https://adoptium.net/pt-BR/temurin/releases?version=17&os=any&arch=any&mode=filter)
 
 📌 Passos:
 
@@ -29,15 +29,14 @@ https://adoptium.net/
 3. Baixe o instalador `.msi`
 4. Instale normalmente
 
-🖼️ Exemplo visual:
-https://adoptium.net/images/installation.png
+<img width="1351" height="645" alt="image" src="https://github.com/user-attachments/assets/a57979db-b1e1-4c79-9af7-06ed85f42da8" />
 
 ---
 
 ## 🎨 JavaFX SDK (21)
 
 🔗 Download:
-https://gluonhq.com/products/javafx/
+[https://gluonhq.com/products/javafx/](https://www.oracle.com/java/technologies/downloads/javafx/#javafx26-linux)
 
 📌 Passos:
 
@@ -55,8 +54,8 @@ https://gluonhq.com/products/javafx/
 C:\javafx
 ```
 
-🖼️ Exemplo visual:
-https://gluonhq.com/wp-content/uploads/2020/02/javafx-download.png
+<img width="1294" height="366" alt="image" src="https://github.com/user-attachments/assets/2a34750e-ee71-4212-a794-89fff5810889" />
+
 
 ---
 
@@ -75,8 +74,8 @@ https://www.eclipse.org/downloads/
 
 4. Clique em Install
 
-🖼️ Exemplo visual:
-https://www.eclipse.org/downloads/images/installer.png
+<img width="1350" height="540" alt="image" src="https://github.com/user-attachments/assets/d749cc2f-8ace-4298-84da-89ba2a5404b1" />
+
 
 ---
 
@@ -86,8 +85,7 @@ https://www.eclipse.org/downloads/images/installer.png
 
 1. File → New → Java Project
 
-🖼️
-https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/images/ngj_newprj_wiz.png
+<img width="702" height="497" alt="image" src="https://github.com/user-attachments/assets/6d6b3be6-50b2-4057-958c-e03b450edd86" />
 
 ---
 
@@ -103,8 +101,7 @@ https://help.eclipse.org/latest/topic/org.eclipse.jdt.doc.user/images/ngj_newprj
 C:\javafx\lib
 ```
 
-🖼️
-https://i.stack.imgur.com/1V7Zl.png
+<img width="597" height="551" alt="image" src="https://github.com/user-attachments/assets/efdf6cbe-a670-48d8-bd23-20813d63ff1d" />
 
 ---
 
@@ -118,8 +115,6 @@ https://i.stack.imgur.com/1V7Zl.png
 --module-path C:\javafx\lib --add-modules javafx.controls,javafx.web
 ```
 
-🖼️
-https://i.stack.imgur.com/6RZ4n.png
 
 ---
 
