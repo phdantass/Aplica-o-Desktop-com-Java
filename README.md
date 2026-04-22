@@ -205,4 +205,4 @@ Este projeto demonstra como integrar tecnologias web dentro de aplicações desk
 
 # 👨‍💻 Autor
 
-Projeto desenvolvido para fins educacionais.
+Pedro Henrique Dantas Silva
